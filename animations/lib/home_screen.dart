@@ -1,3 +1,5 @@
+import 'package:animations/animation_pages/animated_button.dart';
+import 'package:animations/animation_pages/animated_list.dart';
 import 'package:animations/animation_pages/animation1.dart';
 import 'package:animations/animation_pages/fab_button.dart';
 import 'package:animations/animation_pages/parallax.dart';
@@ -27,7 +29,14 @@ class HomeScreen extends StatelessWidget {
               Get.to(const TinderSwipe());
             },
           ),
-          AnimationTile(title: "Parallax", function: () => Get.to(Parallax())),
+          AnimationTile(
+              title: "Parallax", function: () => Get.to(const Parallax())),
+          AnimationTile(
+              title: "Animated List",
+              function: () => Get.to(const AnimatedListTile())),
+          AnimationTile(
+              title: "Animated Button",
+              function: () => Get.to(const AnimatedButton())),
         ],
       ),
     );

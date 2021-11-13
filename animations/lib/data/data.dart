@@ -1,4 +1,4 @@
-List<Map> paintings = [
+List paintings = [
   {
     'image': 'assets/painting6.jpeg',
     'name': 'The Sower',
