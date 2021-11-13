@@ -1,6 +1,7 @@
 import 'package:animations/animation_pages/animated_button.dart';
 import 'package:animations/animation_pages/animated_list.dart';
 import 'package:animations/animation_pages/animation1.dart';
+import 'package:animations/animation_pages/animator_switcher.dart';
 import 'package:animations/animation_pages/fab_button.dart';
 import 'package:animations/animation_pages/parallax.dart';
 import 'package:animations/animation_pages/tinder_swipe_page.dart';
@@ -37,6 +38,9 @@ class HomeScreen extends StatelessWidget {
           AnimationTile(
               title: "Animated Button",
               function: () => Get.to(const AnimatedButton())),
+          AnimationTile(
+              title: "Page View And Animator Switcher",
+              function: () => Get.to(const AnimatedSwitcherPage())),
         ],
       ),
     );
