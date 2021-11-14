@@ -24,7 +24,7 @@ class _AnimatedButtonState extends State<AnimatedButton>
     );
     setRotaion(10);
     WidgetsBinding.instance!.addPostFrameCallback((timeStamp) {
-      _controller.forward();
+      _controller.repeat();
     });
   }
 

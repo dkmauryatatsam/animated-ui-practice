@@ -33,6 +33,7 @@ class _AnimatedSwitcherPageState extends State<AnimatedSwitcherPage> {
     "https://cdn.dribbble.com/users/3281732/screenshots/10940512/media/b2a8ea95c550e5f09d0ca07682a3c0da.jpg?compress=1&resize=600x600",
     "https://cdn.dribbble.com/users/3281732/screenshots/8616916/media/a7e39b15640f8883212421d134013e38.jpg?compress=1&resize=600x600",
     "https://cdn.dribbble.com/users/3281732/screenshots/6590709/samji_illustrator.jpg?compress=1&resize=600x600",
+    "https://images.pexels.com/photos/3094799/pexels-photo-3094799.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
   ];
 
   int currentPage = 0;
@@ -59,8 +60,9 @@ class _AnimatedSwitcherPageState extends State<AnimatedSwitcherPage> {
             ),
           ),
           FractionallySizedBox(
-            heightFactor: 0.55,
+            heightFactor: 1,
             child: PageView.builder(
+              scrollDirection: Axis.vertical,
               onPageChanged: (int page) {
                 setState(() {
                   currentPage = page;
@@ -73,6 +75,7 @@ class _AnimatedSwitcherPageState extends State<AnimatedSwitcherPage> {
                   scale: 1,
                   child: FractionallySizedBox(
                     widthFactor: 0.8,
+                    heightFactor: 0.55,
                     child: Stack(
                       children: [
                         Container(
@@ -88,13 +91,21 @@ class _AnimatedSwitcherPageState extends State<AnimatedSwitcherPage> {
                                   offset: const Offset(0, 5))
                             ],
                           ),
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(32),
-                            child: Image.network(
-                              data[index],
-                              fit: BoxFit.cover,
-                              alignment:
-                                  Alignment(-pageOffset.abs() + index, 0),
+                          child: GestureDetector(
+                            onTap: () {
+                              Get.to(DetailImagePage(imgPath: data[index]));
+                            },
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(32),
+                              child: Hero(
+                                tag: data[index],
+                                child: Image.network(
+                                  data[index],
+                                  fit: BoxFit.cover,
+                                  alignment:
+                                      Alignment(-pageOffset.abs() + index, 0),
+                                ),
+                              ),
                             ),
                           ),
                         ),
@@ -119,5 +130,29 @@ class _AnimatedSwitcherPageState extends State<AnimatedSwitcherPage> {
         ],
       ),
     );
+  }
+}
+
+class DetailImagePage extends StatelessWidget {
+  const DetailImagePage({
+    Key? key,
+    required this.imgPath,
+  }) : super(key: key);
+  final String imgPath;
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        body: SizedBox(
+      height: Get.height,
+      width: Get.width,
+      child: ClipRRect(
+        child: Hero(
+            tag: imgPath,
+            child: Image.network(
+              imgPath,
+              fit: BoxFit.cover,
+            )),
+      ),
+    ));
   }
 }
