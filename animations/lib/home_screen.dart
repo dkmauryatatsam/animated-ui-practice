@@ -1,11 +1,12 @@
 import 'package:animations/animation_pages/animated_button.dart';
 import 'package:animations/animation_pages/animated_list.dart';
-import 'package:animations/animation_pages/animation1.dart';
 import 'package:animations/animation_pages/animator_switcher.dart';
+import 'package:animations/animation_pages/delayed_animation.dart';
 import 'package:animations/animation_pages/fab_button.dart';
+import 'package:animations/animation_pages/flip_animation.dart';
 import 'package:animations/animation_pages/parallax.dart';
 import 'package:animations/animation_pages/tinder_swipe_page.dart';
-import 'package:animations/widgets/expanded_fab.dart';
+import 'package:animations/animation_pages/vertical_parallax.dart';
 import 'package:animations/widgets/animation_tile.dart';
 import 'package:animations/widgets/app_bar.dart';
 import 'package:flutter/material.dart';
@@ -41,6 +42,15 @@ class HomeScreen extends StatelessWidget {
           AnimationTile(
               title: "Page View And Animator Switcher",
               function: () => Get.to(const AnimatedSwitcherPage())),
+          AnimationTile(
+              title: "Verticle Scrolling Parallax",
+              function: () => Get.to(const VerticalParallax())),
+          AnimationTile(
+              title: "Delayed Animation",
+              function: () => Get.to(const DelayedAnimation())),
+          AnimationTile(
+              title: "Delayed Animation",
+              function: () => Get.to(const FlipAnimation())),
         ],
       ),
     );
