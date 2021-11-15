@@ -49,7 +49,7 @@ class HomeScreen extends StatelessWidget {
               title: "Delayed Animation",
               function: () => Get.to(const DelayedAnimation())),
           AnimationTile(
-              title: "Delayed Animation",
+              title: "Flip Animation",
               function: () => Get.to(const FlipAnimation())),
         ],
       ),
