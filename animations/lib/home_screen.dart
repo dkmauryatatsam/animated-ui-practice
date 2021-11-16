@@ -4,6 +4,8 @@ import 'package:animations/animation_pages/animator_switcher.dart';
 import 'package:animations/animation_pages/delayed_animation.dart';
 import 'package:animations/animation_pages/fab_button.dart';
 import 'package:animations/animation_pages/flip_animation.dart';
+import 'package:animations/animation_pages/getx_game.dart';
+import 'package:animations/animation_pages/page_wave_transition.dart';
 import 'package:animations/animation_pages/parallax.dart';
 import 'package:animations/animation_pages/tinder_swipe_page.dart';
 import 'package:animations/animation_pages/vertical_parallax.dart';
@@ -51,6 +53,12 @@ class HomeScreen extends StatelessWidget {
           AnimationTile(
               title: "Flip Animation",
               function: () => Get.to(const FlipAnimation())),
+          AnimationTile(
+              title: "Game Controller",
+              function: () => Get.to(const GetxGame())),
+          AnimationTile(
+              title: "Page Wave Transition",
+              function: () => Get.to(const PageWaveTransition())),
         ],
       ),
     );
