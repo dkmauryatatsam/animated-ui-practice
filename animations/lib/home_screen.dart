@@ -8,6 +8,7 @@ import 'package:animations/animation_pages/getx_game.dart';
 import 'package:animations/animation_pages/page_wave_transition.dart';
 import 'package:animations/animation_pages/parallax.dart';
 import 'package:animations/animation_pages/tinder_swipe_page.dart';
+import 'package:animations/animation_pages/tween_animation_page.dart';
 import 'package:animations/animation_pages/vertical_parallax.dart';
 import 'package:animations/widgets/animation_tile.dart';
 import 'package:animations/widgets/app_bar.dart';
@@ -59,6 +60,9 @@ class HomeScreen extends StatelessWidget {
           AnimationTile(
               title: "Page Wave Transition",
               function: () => Get.to(const PageWaveTransition())),
+          AnimationTile(
+              title: "TweenAnimationBuilder",
+              function: () => Get.to(const TweenAnimationBuilderPage())),
         ],
       ),
     );
