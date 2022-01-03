@@ -28,6 +28,10 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
   cupertino_icons: ^1.0.2
+  marquee: ^2.2.0
+  animate_do: ^2.0.0
+  vector_math: ^2.1.0
+  dashbook: ^0.1.5
   flutter:
     sdk: flutter
   get: ^4.3.8

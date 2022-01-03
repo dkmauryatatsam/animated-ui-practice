@@ -24,22 +24,22 @@ class _AnimatedButtonState extends State<AnimatedButton>
     );
     setRotaion(10);
     WidgetsBinding.instance!.addPostFrameCallback((timeStamp) {
-      _controller.repeat();
+      _controller.repeat(reverse: true);
     });
   }
 
-  void setAnimation() {
-    _controller.addStatusListener((status) async {
-      await Future.delayed(const Duration(milliseconds: 500));
-      if (AnimationStatus.completed == status) {
-        _controller.reverse();
-      }
-      await Future.delayed(const Duration(milliseconds: 500));
-      if (AnimationStatus.completed != status) {
-        _controller.forward();
-      }
-    });
-  }
+  // void setAnimation() {
+  //   _controller.addStatusListener((status) async {
+  //     await Future.delayed(const Duration(milliseconds: 500));
+  //     if (AnimationStatus.completed == status) {
+  //       _controller.reverse();
+  //     }
+  //     await Future.delayed(const Duration(milliseconds: 500));
+  //     if (AnimationStatus.completed != status) {
+  //       _controller.forward();
+  //     }
+  //   });
+  // }
 
   void setRotaion(int degree) {
     final angle = degree * pi / 180;

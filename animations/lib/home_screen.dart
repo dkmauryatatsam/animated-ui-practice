@@ -1,12 +1,16 @@
 import 'package:animations/animation_pages/animated_button.dart';
+import 'package:animations/animation_pages/animated_drawer.dart';
 import 'package:animations/animation_pages/animated_list.dart';
 import 'package:animations/animation_pages/animator_switcher.dart';
 import 'package:animations/animation_pages/delayed_animation.dart';
 import 'package:animations/animation_pages/fab_button.dart';
 import 'package:animations/animation_pages/flip_animation.dart';
 import 'package:animations/animation_pages/getx_game.dart';
+import 'package:animations/animation_pages/hero_animation.dart';
 import 'package:animations/animation_pages/page_wave_transition.dart';
 import 'package:animations/animation_pages/parallax.dart';
+import 'package:animations/animation_pages/shake_animation.dart';
+import 'package:animations/animation_pages/text_animation.dart';
 import 'package:animations/animation_pages/tinder_swipe_page.dart';
 import 'package:animations/animation_pages/tween_animation_page.dart';
 import 'package:animations/animation_pages/vertical_parallax.dart';
@@ -24,6 +28,9 @@ class HomeScreen extends StatelessWidget {
       appBar: universalAppBar("Animations"),
       body: ListView(
         children: [
+          AnimationTile(
+              title: "Animated Drawer",
+              function: () => Get.to(const AnimatedDrawer())),
           AnimationTile(
             title: "Animated Expanded FAB",
             function: () => Get.to(const AnimatedFAB()),
@@ -63,6 +70,15 @@ class HomeScreen extends StatelessWidget {
           AnimationTile(
               title: "TweenAnimationBuilder",
               function: () => Get.to(const TweenAnimationBuilderPage())),
+          AnimationTile(
+              title: "Text Animation",
+              function: () => Get.to(const TextAnimation())),
+          AnimationTile(
+              title: "Hero Animation",
+              function: () => Get.to(const HeroAnimationPage())),
+          AnimationTile(
+              title: "Shake Animation",
+              function: () => Get.to(const ShakeAnimation())),
         ],
       ),
     );
